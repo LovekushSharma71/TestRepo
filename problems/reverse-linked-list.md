@@ -20,10 +20,10 @@
 - **Time Complexity:** `O(N)` *(Optimal: `O(N)`)*
 - **Space Complexity:** `O(1)` *(Optimal: `O(1)`)*
 
-> The user correctly identified the standard iterative approach for reversing a linked list. The use of `prev`, `curr`, and `nextTemp` is textbook. The reflection shows a good understanding of space complexity trade-offs.
+> The user correctly identified and implemented the optimal iterative solution. The reflection indicates a good understanding of space complexity trade-offs, moving from a less optimal stack-based approach to the efficient pointer manipulation.
 
   ## Highlights
-  The code demonstrates a clear and efficient iterative reversal of the linked list using a constant amount of extra space. The pointer manipulation is accurate and effective.
+  The use of three pointers (`prev`, `curr`, `nextTemp`) to manage the reversal process iteratively is a standard and efficient technique. The code is clean and directly addresses the problem with optimal space complexity.
   
   ## Common Mistakes
 No common mistakes identified for this approach.
