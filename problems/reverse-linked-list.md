@@ -16,14 +16,14 @@ function reverseList(head) {
 }
 ```
 
-> Their initial consideration of using an auxiliary data structure like an array or stack, while functional, would have introduced O(N) space complexity, violating the principle of an in-place linked list manipulation. The final provided code, however, does not suffer from this flaw.
+> 
 
 ## Highlights
-Successfully identified and implemented the iterative three-pointer technique for in-place reversal, achieving optimal O(1) space complexity. The pointer management is clear and efficient.
+The user successfully identified the sub-optimality of a stack-based approach in terms of space complexity and transitioned to the optimal in-place iterative solution. The use of three distinct pointers (`prev`, `curr`, `nextTemp`) is precisely executed to manage link redirection without data loss or redundant operations.
 
 ##Common mistakes:
 
 
 ## Alternative Approaches
 ### Approach 1
-Recursive solution: Achieves O(N) time but utilizes O(N) space due to recursion stack depth. While functionally equivalent, it sacrifices space optimality for a potentially more concise implementation.
+O(N) Time/O(N) Space via Recursive Approach (implicit call stack)
