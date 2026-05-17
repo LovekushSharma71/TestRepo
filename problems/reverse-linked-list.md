@@ -21,10 +21,10 @@
 - **Time Complexity:** `O(N)` *(Optimal: `O(N)`)*
 - **Space Complexity:** `O(1)` *(Optimal: `O(1)`)*
 
-> The user correctly identified the limitation of their initial O(N) space approach and implemented a highly efficient iterative solution. The variable naming is clear and the logic is sound. No fundamental critiques can be levied against this implementation for the given problem.
+> The user's understanding of space complexity is sound, but their reflection incorrectly labels the pattern as 'Fast & Slow Pointers'. This iterative approach is more accurately characterized by pointer manipulation for reversal.
 
   ## Highlights
-  The iterative reversal using three pointers (`prev`, `curr`, `nextTemp`) is a classic and optimal approach. It demonstrates a strong understanding of linked list manipulation and space efficiency.
+  The iterative approach correctly identifies the need for three pointers (`prev`, `curr`, `nextTemp`) to manage the reversal process efficiently, resulting in optimal O(N) time and O(1) space complexity.
   
   ## Common Mistakes
 No common mistakes identified for this approach.
