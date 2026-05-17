@@ -10,13 +10,13 @@
 - **Time Complexity:** `O(N)` *(Optimal: `O(N)`)*
 - **Space Complexity:** `O(N)` *(Optimal: `O(1)`)*
 
-> The solution is incomplete, failing to address the core preprocessing steps required by the problem statement. The `isPal` function correctly checks for palindromes on a pre-processed string, but the crucial transformation from raw input to a clean string is missing.
+> The implementation utilizes string slicing to reverse the entire string, which is inefficient in terms of space complexity. A more optimal approach would involve two pointers to compare characters from both ends inward.
 
   ## Highlights
   
   
   ## Common Mistakes
-- The provided code snippet is incomplete. It lacks the necessary logic to handle the problem statement's requirements of converting to lowercase and removing non-alphanumeric characters.
+- Slicing creates a new reversed string, which is not space-optimal.
   ## Alternative Approaches
 ### Approach 1
-Two Pointers: Iterate from both ends of the string inwards, comparing characters after ensuring they are alphanumeric and lowercased. This achieves O(N) time complexity with O(1) space complexity by avoiding the creation of a new string for the reversed version.
+Consider an iterative approach using two pointers, one starting at the beginning and the other at the end of the string, moving towards the center. This achieves O(1) space complexity by avoiding the creation of a new reversed string.
