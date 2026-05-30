@@ -8,7 +8,7 @@
 | **Elegance Score** | `+1.0` / `+1.0` |
 
 ### ⏳ Performance vs. Optimal
-- **Time Complexity:** `O(log N)` *(Optimal: `O(log N)`)*
+- **Time Complexity:** `O(log n)` *(Optimal: `O(log n)`)*
 - **Space Complexity:** `O(1)` *(Optimal: `O(1)`)*
 
 ---
@@ -19,7 +19,7 @@
 > No architectural critiques apply.
 
 ### Highlights
-The implementation correctly utilizes the standard binary search template with a robust midpoint calculation to handle overflow risks. Logic correctly identifies the narrowing search space based on sorted input properties.
+The implementation correctly utilizes the converging pointers pattern and implements the midpoint calculation defensively against integer overflow.
 
 ### Common Mistakes
 _Code is structurally sound. No common mistakes flagged._
@@ -29,10 +29,10 @@ _Code is structurally sound. No common mistakes flagged._
 ## 🔭 Horizon Expansion
 
 ### 🛠️ Micro-Improvement (Syntax & Execution)
-The syntax is optimal for the language, though one could use bitwise shift (mid = (left + right) >>> 1) for a slightly more idiomatic, albeit micro-optimized, approach.
+The code is already optimal; syntax and logic conform to professional standards.
 
 ### 🏗️ Macro-Alternative (Architectural Trade-off)
-Consider the 'Exponential Search' approach for scenarios where the array size is infinite or unknown, which identifies the search bounds in O(log k) before performing a binary search.
+Consider an alternative recursive implementation to practice the Divide & Conquer pattern, though it would incur O(log n) space complexity due to the call stack.
 
 ---
 
