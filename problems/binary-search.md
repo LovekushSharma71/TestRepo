@@ -19,7 +19,7 @@
 > No architectural critiques apply.
 
 ### Highlights
-The implementation correctly utilizes the standard binary search pattern, including the robust midpoint calculation (left + (right - left) / 2) to avoid potential overflow issues, which is technically sound despite JavaScript's number type properties.
+The implementation correctly utilizes the standard binary search template with appropriate midpoint calculation to avoid overflow and maintains optimal log-linear boundary narrowing.
 
 ### Common Mistakes
 _Code is structurally sound. No common mistakes flagged._
@@ -29,10 +29,10 @@ _Code is structurally sound. No common mistakes flagged._
 ## 🔭 Horizon Expansion
 
 ### 🛠️ Micro-Improvement (Syntax & Execution)
-The current logic is optimal; however, using bitwise shift (mid = (left + right) >>> 1) is a common, slightly more performant idiom in environment-specific contexts for integer midpoints.
+While Math.floor is standard, using a bitwise shift operator 'mid = left + ((right - left) >> 1)' can be slightly faster in some JavaScript engines, though it behaves differently with large 32-bit integers.
 
 ### 🏗️ Macro-Alternative (Architectural Trade-off)
-An alternative approach is the 'Binary Search on Answer' variant if this were a minimization problem, or utilizing recursive tail-call optimization, though the iterative approach is superior for stack space efficiency.
+For scenarios where the array is extremely large or the target appears multiple times, consider a variation using binary search to find the 'leftmost' or 'rightmost' index of the target instead of returning an arbitrary index.
 
 ---
 
