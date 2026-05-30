@@ -8,7 +8,7 @@
 | **Elegance Score** | `+0.5` / `+1.0` |
 
 ### ⏳ Performance vs. Optimal
-- **Time Complexity:** `O(log N)` *(Optimal: `O(log N)`)*
+- **Time Complexity:** `O(log n)` *(Optimal: `O(log n)`)*
 - **Space Complexity:** `O(1)` *(Optimal: `O(1)`)*
 
 ---
@@ -19,7 +19,7 @@
 > No architectural critiques apply.
 
 ### Highlights
-The implementation correctly utilizes the overflow-safe midpoint calculation, which demonstrates an understanding of memory boundary constraints in low-level execution environments.
+The implementation correctly utilizes the mid-point calculation 'left + (right - left) / 2' to safely avoid integer overflow, and correctly maintains the invariant for the search range boundaries.
 
 ### Common Mistakes
 _Code is structurally sound. No common mistakes flagged._
@@ -29,10 +29,10 @@ _Code is structurally sound. No common mistakes flagged._
 ## 🔭 Horizon Expansion
 
 ### 🛠️ Micro-Improvement (Syntax & Execution)
-Use bitwise right shift operator 'mid = left + ((right - left) >> 1)' for a minor micro-optimization in constant factor calculation.
+For the mid calculation, the bitwise shift operator '(left + right) >>> 1' could be used for slightly cleaner syntax in environments where performance is critical.
 
 ### 🏗️ Macro-Alternative (Architectural Trade-off)
-Consider an recursive implementation to explore functional paradigm decomposition, though it would incur O(log N) stack space overhead.
+Consider implementing an alternative using the 'bisect' module patterns or lower_bound/upper_bound functions to handle ranges or duplicate elements if the problem constraints were expanded.
 
 ---
 
