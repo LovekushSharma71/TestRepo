@@ -19,7 +19,7 @@
 > No architectural critiques apply.
 
 ### Highlights
-The implementation correctly utilizes the converging pointers pattern and implements the midpoint calculation defensively against integer overflow.
+The implementation correctly utilizes the standard binary search pattern, including the robust midpoint calculation (left + (right - left) / 2) to avoid potential overflow issues, which is technically sound despite JavaScript's number type properties.
 
 ### Common Mistakes
 _Code is structurally sound. No common mistakes flagged._
@@ -29,10 +29,10 @@ _Code is structurally sound. No common mistakes flagged._
 ## 🔭 Horizon Expansion
 
 ### 🛠️ Micro-Improvement (Syntax & Execution)
-The code is already optimal; syntax and logic conform to professional standards.
+The current logic is optimal; however, using bitwise shift (mid = (left + right) >>> 1) is a common, slightly more performant idiom in environment-specific contexts for integer midpoints.
 
 ### 🏗️ Macro-Alternative (Architectural Trade-off)
-Consider an alternative recursive implementation to practice the Divide & Conquer pattern, though it would incur O(log n) space complexity due to the call stack.
+An alternative approach is the 'Binary Search on Answer' variant if this were a minimization problem, or utilizing recursive tail-call optimization, though the iterative approach is superior for stack space efficiency.
 
 ---
 
