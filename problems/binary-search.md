@@ -19,7 +19,7 @@
 > No architectural critiques apply.
 
 ### Highlights
-The implementation correctly utilizes the standard binary search template with appropriate midpoint calculation to avoid overflow and maintains optimal log-linear boundary narrowing.
+The implementation correctly utilizes the binary search template with robust overflow prevention by calculating the midpoint as left + (right - left) / 2 and properly adjusting search boundaries.
 
 ### Common Mistakes
 _Code is structurally sound. No common mistakes flagged._
@@ -29,10 +29,10 @@ _Code is structurally sound. No common mistakes flagged._
 ## 🔭 Horizon Expansion
 
 ### 🛠️ Micro-Improvement (Syntax & Execution)
-While Math.floor is standard, using a bitwise shift operator 'mid = left + ((right - left) >> 1)' can be slightly faster in some JavaScript engines, though it behaves differently with large 32-bit integers.
+The syntax is optimal for TypeScript; no micro-improvements are necessary.
 
 ### 🏗️ Macro-Alternative (Architectural Trade-off)
-For scenarios where the array is extremely large or the target appears multiple times, consider a variation using binary search to find the 'leftmost' or 'rightmost' index of the target instead of returning an arbitrary index.
+For massive static datasets where performance is critical, one could consider using an interpolated search to potentially achieve O(log log n) time complexity, albeit with O(n) worst-case performance.
 
 ---
 
