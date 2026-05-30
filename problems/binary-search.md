@@ -8,7 +8,7 @@
 | **Elegance Score** | `+1.0` / `+1.0` |
 
 ### ⏳ Performance vs. Optimal
-- **Time Complexity:** `O(log n)` *(Optimal: `O(log n)`)*
+- **Time Complexity:** `O(log N)` *(Optimal: `O(log N)`)*
 - **Space Complexity:** `O(1)` *(Optimal: `O(1)`)*
 
 ---
@@ -19,7 +19,7 @@
 > No architectural critiques apply.
 
 ### Highlights
-The implementation correctly utilizes the optimal iterative binary search pattern, including the standard midpoint calculation to prevent integer overflow.
+The implementation correctly utilizes the optimal mid-calculation formula (left + (right - left) / 2) to avoid potential overflow issues, despite JavaScript's Number type being a 64-bit float. The boundary conditions (left <= right) and the pointer updates (mid + 1 / mid - 1) are strictly correct.
 
 ### Common Mistakes
 _Code is structurally sound. No common mistakes flagged._
@@ -29,10 +29,10 @@ _Code is structurally sound. No common mistakes flagged._
 ## 🔭 Horizon Expansion
 
 ### 🛠️ Micro-Improvement (Syntax & Execution)
-The current syntax is already optimal; ensure the runtime environment supports the target ECMAScript version for Math.floor.
+Use bitwise shift (left + ((right - left) >> 1)) for marginally faster integer division in environments where Math.floor incurs overhead.
 
 ### 🏗️ Macro-Alternative (Architectural Trade-off)
-For sorted arrays with duplicate values, consider using lower_bound or upper_bound logic to find the first or last occurrence of the target.
+Consider implementing an iterative approach using a single pointer and a range width variable, or a recursive approach if specific tail-call optimization requirements are present in the target environment.
 
 ---
 
