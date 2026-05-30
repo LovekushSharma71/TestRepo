@@ -1,32 +1,63 @@
-# reverse-linked-list
+# subarray-sum-equals-k
 
-  ## Code
-  ```
-  function reverseList(head) {
-      let prev = null;
-      let curr = head;
-      
-      while (curr !== null) {
-          let nextTemp = curr.next; // Store next node
-          curr.next = prev;         // Reverse the link
-           prev = curr;              // Move prev forward
-           curr = nextTemp;          // Move curr forward
-       }
-       
-       return prev;
-   }
-  ```
-  
-  ### Complexity Analysis
+## 📊 Core Metrics
+| Metric | Data |
+| :--- | :--- |
+| **Difficulty** | MEDIUM |
+| **Pattern** | Prefix Sum + Hash Map (Subarray Targeting) |
+| **Elegance Score** | `+1.0` / `+1.0` |
+
+### ⏳ Performance vs. Optimal
 - **Time Complexity:** `O(N)` *(Optimal: `O(N)`)*
-- **Space Complexity:** `O(1)` *(Optimal: `O(1)`)*
+- **Space Complexity:** `O(N)` *(Optimal: `O(N)`)*
 
-> The user correctly identified the inefficiency of the O(N) space approach. The current iterative solution is optimal in terms of time and space complexity. The pointer manipulation is standard for this problem.
+---
 
-  ## Highlights
-  The user's explanation of using three pointers (`prev`, `curr`, `nextTemp`) demonstrates a solid understanding of how to reverse a linked list iteratively in-place.
-  
-  ## Common Mistakes
-No common mistakes identified for this approach.
-  ## Alternative Approaches
-No alternative approaches suggested.
+## 📝 Code Review
+
+### Approach Critique
+> The user correctly identified the failure of the sliding window technique due to negative numbers and implemented the optimal Hash Map-based prefix sum approach. The logic is sound, handles edge cases via the base case initialization (0: 1), and adheres to standard time and space complexities.
+
+### Highlights
+The implementation of the prefix sum difference tracking is idiomatic and clean. Using a hash map to store frequencies of prefix sums allows for O(1) lookups, ensuring O(N) total execution time.
+
+### Common Mistakes
+_Code is structurally sound. No common mistakes flagged._
+
+---
+
+## 🔭 Horizon Expansion
+
+### 🛠️ Micro-Improvement (Syntax & Execution)
+The code is optimal; micro-improvements would only involve minor syntactic changes like using 'Map.get' and 'Map.set' more concisely, though the current implementation is already clear.
+
+### 🏗️ Macro-Alternative (Architectural Trade-off)
+Trading O(N) space for O(N^2) time by using nested loops to calculate subarray sums, which would be necessary only if space constraints were extremely restrictive and memory was non-existent.
+
+---
+
+## 💻 Submitted Code
+```typescript
+function subarraySum(nums: number[], k: number): number {
+    let count = 0;
+    let sum = 0;
+    const prefixMap = new Map<number, number>();
+    
+    // Base case: a prefix sum of 0 has occurred 1 time
+    prefixMap.set(0, 1);
+
+    for (let num of nums) {
+        sum += num;
+        
+        // If (sum - k) exists in the map, we found valid subarrays
+        if (prefixMap.has(sum - k)) {
+            count += prefixMap.get(sum - k)!;
+        }
+        
+        // Add current prefix sum to the map
+        prefixMap.set(sum, (prefixMap.get(sum) || 0) + 1);
+    }
+
+    return count;
+}
+```
