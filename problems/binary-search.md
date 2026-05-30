@@ -19,7 +19,7 @@
 > No architectural critiques apply.
 
 ### Highlights
-The implementation correctly utilizes the mid-point calculation 'left + (right - left) / 2' to safely avoid integer overflow, and correctly maintains the invariant for the search range boundaries.
+The implementation correctly utilizes the mid-point calculation formula to prevent integer overflow and maintains the correct binary search invariant.
 
 ### Common Mistakes
 _Code is structurally sound. No common mistakes flagged._
@@ -29,10 +29,10 @@ _Code is structurally sound. No common mistakes flagged._
 ## 🔭 Horizon Expansion
 
 ### 🛠️ Micro-Improvement (Syntax & Execution)
-For the mid calculation, the bitwise shift operator '(left + right) >>> 1' could be used for slightly cleaner syntax in environments where performance is critical.
+Replace Math.floor(left + (right - left) / 2) with the bitwise operator (left + right) >>> 1 for a slight performance optimization in high-frequency loops.
 
 ### 🏗️ Macro-Alternative (Architectural Trade-off)
-Consider implementing an alternative using the 'bisect' module patterns or lower_bound/upper_bound functions to handle ranges or duplicate elements if the problem constraints were expanded.
+Implement an exponential search followed by a binary search if the target is significantly closer to the beginning of a near-infinite stream.
 
 ---
 
