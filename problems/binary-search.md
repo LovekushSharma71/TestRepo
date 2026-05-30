@@ -19,7 +19,7 @@
 > No architectural critiques apply.
 
 ### Highlights
-The implementation correctly utilizes the binary search template with robust overflow prevention by calculating the midpoint as left + (right - left) / 2 and properly adjusting search boundaries.
+The implementation correctly utilizes the optimal iterative binary search pattern, including the standard midpoint calculation to prevent integer overflow.
 
 ### Common Mistakes
 _Code is structurally sound. No common mistakes flagged._
@@ -29,10 +29,10 @@ _Code is structurally sound. No common mistakes flagged._
 ## 🔭 Horizon Expansion
 
 ### 🛠️ Micro-Improvement (Syntax & Execution)
-The syntax is optimal for TypeScript; no micro-improvements are necessary.
+The current syntax is already optimal; ensure the runtime environment supports the target ECMAScript version for Math.floor.
 
 ### 🏗️ Macro-Alternative (Architectural Trade-off)
-For massive static datasets where performance is critical, one could consider using an interpolated search to potentially achieve O(log log n) time complexity, albeit with O(n) worst-case performance.
+For sorted arrays with duplicate values, consider using lower_bound or upper_bound logic to find the first or last occurrence of the target.
 
 ---
 
